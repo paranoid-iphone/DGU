@@ -3,30 +3,42 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PowerWizard Dashboard</title>
+<title>PowerWizard Monitor</title>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <header class="header">
   <div class="header-left">
-    <span class="logo">⚡ PowerWizard</span>
-    <span id="mode-badge" class="mode-badge">—</span>
+    <span class="logo">PowerWizard Monitor</span>
+    <span id="header-sub" class="logo-sub">Инициализация...</span>
   </div>
   <div class="header-right">
-    <span id="last-update" class="last-update">—</span>
+    <span id="mode-badge" class="mode-badge">—</span>
     <span id="conn-indicator" class="conn-dot conn-unknown"></span>
   </div>
 </header>
 
+<div class="section-label">Общий обзор</div>
 <main class="overview-grid" id="overview-grid">
-  <div class="loading-placeholder">Загрузка...</div>
+  <div class="loading-placeholder">Загрузка данных...</div>
 </main>
 
-<!-- Drawer -->
 <div id="drawer-overlay" class="drawer-overlay hidden"></div>
 <aside id="drawer" class="drawer hidden">
-  <button id="drawer-close" class="drawer-close" aria-label="Закрыть">✕</button>
-  <div id="drawer-content" class="drawer-content"></div>
+  <div class="d-hdr">
+    <div class="d-hdr-left">
+      <span id="d-title" class="d-title">—</span>
+      <span id="d-sub"   class="d-sub">—</span>
+    </div>
+    <div class="d-hdr-right">
+      <span class="d-conn">
+        <span id="d-conn-dot" class="conn-dot conn-unknown"></span>
+        <span id="d-conn-txt"></span>
+      </span>
+      <button id="drawer-close" class="d-close" aria-label="Закрыть">✕</button>
+    </div>
+  </div>
+  <div id="d-body" class="d-body"></div>
 </aside>
 
 <script src="app.js"></script>

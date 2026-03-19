@@ -119,7 +119,17 @@ def build_demo_snapshot():
     scenario = _demo_scenario_index()
     devices  = {
         d["name"]: _make_demo_device(d["name"], d["slave_id"], scenario)
-        for d in [{"name": "DG-1", "slave_id": 1}, {"name": "DG-2", "slave_id": 2}]
+        for d in [
+            {"name": "DG-1", "slave_id": 1},
+            {"name": "DG-2", "slave_id": 2},
+            {"name": "DG-3", "slave_id": 3},
+            {"name": "DG-4", "slave_id": 4},
+            {"name": "DG-5", "slave_id": 5},
+            {"name": "DG-6", "slave_id": 6},
+            {"name": "DG-7", "slave_id": 7},
+            {"name": "DG-8", "slave_id": 8},
+            {"name": "DG-9", "slave_id": 9},
+        ]
     }
     successful = sum(1 for d in devices.values() if d["connection_status"] == "ok")
     return {
